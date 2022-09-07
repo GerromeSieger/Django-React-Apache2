@@ -1,17 +1,12 @@
-version: '3'
+version: "3.8"
 
 services:
     backend:
-      restart: unless-stopped
       build:
-          context: .
-          dockerfile: ./docker/backend/Dockerfile
-      volumes:
-
-#      entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+          context: ./backend
       volumes:
         - .:/app
-        - ./backend/djangoreactproject/django_static:/app/backend/djangoreactproject/django_static
+        - static_volume:/app/staticfiles/
       expose:
         - 8000
       depends_on:
@@ -21,17 +16,14 @@ services:
       image: postgres:10.1-alpine
 
     nginx:
-      restart: unless-stopped
       build:
-          context: .
-          dockerfile: ./docker/nginx/Dockerfile
+          context: ./frontend
       ports:
         - 80:80
       volumes:
-        - static_volumes:/app/backend/djangoreactproject/django_static
-        - ./docker/nginx/dev:/etc/nginx/conf.d
+        - static_volume:/app/staticfiles/
       depends_on:
         - backend
     
 volumes:
-   static_volumes: {}
+   static_volume: 
