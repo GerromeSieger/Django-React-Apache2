@@ -16,7 +16,7 @@ COPY ./docker /app/docker
 
 COPY ./docker/backend/wsgi-entrypoint.sh /
 
-COPY /home/victor/django-react2/backend/ /app
+COPY ./backend /app
 
 ENTRYPOINT ["sh", "/wsgi-entrypoint.sh"]
 
