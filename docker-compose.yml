@@ -2,8 +2,9 @@ version: "3.8"
 
 services:
     backend:
-      build:
-          context: ./backend
+      image: gerrome/django-react2_backend:1
+    #  build:
+    #      context: ./backend
       volumes:
         - .:/app
         - static_volume:/app/staticfiles/
@@ -16,8 +17,9 @@ services:
       image: postgres:10.1-alpine
 
     nginx:
-      build:
-          context: ./frontend
+      image: gerrome/django-react2_nginx:1
+    #  build:
+    #      context: ./frontend
       ports:
         - 80:80
       volumes:
