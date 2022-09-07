@@ -17,7 +17,7 @@ test_demo:
     - yarn install 
     - yarn jest
 
-build_django:
+.build_django:
   stage: build-docker
   image: docker:20.10.16
   services:
@@ -30,7 +30,7 @@ build_django:
     - docker build -t gerrome/django-react2_backend:1 ./docker/backend
     - docker push gerrome/django-react2_backend:1
 
-build_vue-nginx:
+.build_vue-nginx:
   stage: build-docker
   image: docker:20.10.16
   services:
