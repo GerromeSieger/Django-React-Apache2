@@ -14,9 +14,9 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY ./docker /app/docker
 
-COPY ./backend /app
-
 COPY ./docker/backend/wsgi-entrypoint.sh /
+
+COPY /home/victor/django-react2/backend /app
 
 ENTRYPOINT ["sh", "/wsgi-entrypoint.sh"]
 

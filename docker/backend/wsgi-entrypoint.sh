@@ -1,4 +1,5 @@
 #!/bin/sh
+
 cd /app/backend/djangoreactproject
 
 python3 manage.py makemigrations
