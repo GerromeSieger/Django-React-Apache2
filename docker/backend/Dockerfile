@@ -16,5 +16,8 @@ COPY ./docker /app/docker
 
 COPY ./backend /app
 
+COPY ./docker/backend/wsgi-entrypoint.sh /
+
+ENTRYPOINT ["sh", "/wsgi-entrypoint.sh"]
 
 

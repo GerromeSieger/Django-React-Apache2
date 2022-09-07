@@ -8,7 +8,7 @@ services:
           dockerfile: ./docker/backend/Dockerfile
       volumes:
 
-      entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+#      entrypoint: /app/docker/backend/wsgi-entrypoint.sh
       volumes:
         - .:/app
         - ./backend/djangoreactproject/django_static:/app/backend/djangoreactproject/django_static
