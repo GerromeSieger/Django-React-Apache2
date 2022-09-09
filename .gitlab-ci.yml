@@ -14,8 +14,8 @@ test_demo:
   image: node:16.13.1-alpine
   script:
     - cd frontend
-    - yarn install 
-    - yarn jest
+    - npm install 
+    - npm test
 
 build_django:
   stage: build-docker
