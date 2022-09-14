@@ -22,10 +22,10 @@ services:
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=postgres
 
-    apache2:
-    #  image: gerrome/django-react2_nginx:1
-      build:
-          context: ./frontend
+    nginx:
+      image: gerrome/django-react2_nginx:1
+    #  build:
+    #      context: ./frontend
       ports:
         - 80:80
       volumes:
